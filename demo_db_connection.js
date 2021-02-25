@@ -33,6 +33,11 @@ con.connect(function(err) {
 //     let a=0;
 //     con.query("SELECT id from customers ", function (err, result) {
 //       if (err) throw err;
+
+
+//SELECT * FROM (SELECT user_id,name,email, CAST(SUBSTRING_INDEX(pick_up_time, ',',1) AS time) AS Start_time,
+//		CAST(SUBSTRING_INDEX(pick_up_time, ',', -1) AS time) AS End_time 
+ //       from t_user) as t_user  LEFT JOIN test_1 ON t_user.user_id=test_1.t_id WHERE t_user.Start_time>='1:00 PM' AND t_user.End_time<='4:00 PM' && t_user.name="jatin"
 //       console.log(result)
 //      a = result + a
 //       console.log(a,"average");
