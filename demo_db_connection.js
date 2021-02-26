@@ -49,3 +49,5 @@ con.connect(function(err) {
     // console.log(result);
     //SELECT customers.name,ordersin.OrderNumber,ordersin.PersonID FROM customers LEFT JOIN ordersin ON ordersin.PersonID = customers.id;
     //SELECT customers.name,ordersin.OrderNumber,ordersin.PersonID FROM customers INNER JOIN ordersin ON ordersin.PersonID = customers.id WHERE ordersin.PersonID ='3'
+
+//SELECT * FROM (SELECT user_id,name,email, CAST(SUBSTRING_INDEX(pick_up_time, ',',1) AS time) AS A, CAST(SUBSTRING_INDEX(pick_up_time, ',', -1) AS time) AS B from t_user) as C LEFT JOIN test_1 ON C.user_id = test_1.t_id WHERE c.A>='1:00 PM' AND C.B<='4:00 PM'
